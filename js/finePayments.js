@@ -11,8 +11,7 @@ let cvv = document.getElementById("cvv");
 let amount = document.getElementById("amount");
 let buttonSubmit = document.getElementById("payFine");
 
-//Ця зміна містить всі дані які в нас зберігаються у файлі data
-let DB = data.finesData;
+
 
 
 /**
@@ -34,5 +33,6 @@ alert "Номер не співпадає" або "Сума не співпад�
  */
 buttonSubmit.addEventListener('click',payFine);
 function payFine(){
-
+    //Звертаючись до властивості finesData ви отримуєте всі дані з файлу data.js
+    console.log(data.finesData)
 }
