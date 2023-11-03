@@ -18,10 +18,21 @@ function searchFines(searchKey){
      - Невірне паркування
      - Їзда у не тверезому стані
      */
+    var result = [];
 
+    for (let i = 0; i < DB.length; i++)
+    {
+        if (DB[i].номер === searchKey) {
+            result = result.concat(DB[i]);
+        }
+        else {
+                if (DB[i].тип === searchKey) {
+                result = result.concat(DB[i]);
+            }
+        }
 
-    return [
-        {номер: '001', тип: 'Перевищення швидкості', сума: 100, дата: '2023-01-15'}
-    ];
+    }
+    if (result.length == 0) alert("Такого штрафу не має.");
+    return result;
 }
 
